@@ -1,0 +1,23 @@
+{
+  "name": "be_nodejs",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": " \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\""
+  },
+  "start": "nodemon server.js",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.12",
+    "@types/node": "^15.12.5",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "mysql": "^2.18.1"
+  }
+}
