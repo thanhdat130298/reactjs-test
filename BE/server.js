@@ -1,13 +1,21 @@
-let express = require("express");
-let app = express();
-let port = process.env.PORT || 3000;
-var mysql = require("mysql");
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "pet",
-});
-app.listen(port);
+const express = require('express')
+const app = express();
+const con = require('./db')
+require('dotenv').config()
+const port = process.env.PORT || 3000;
+app.use(express.urlencoded({extended: true})); 
+app.use(express.json());
 
-console.log("RESTful API server started on: " + JSON.stringify(mysql));
+let routes = require('./routes') //importing route
+routes(app)
+con.connect(function(err) {
+  if (err) console.log("---------",err) ;
+  else console.log("Connected!!!")
+});
+app.use(function(req, res) {
+    res.status(404).send({url: req.originalUrl + ' not found'})
+})
+
+app.listen(port)
+
+console.log('RESTful API server started on: ' + port)
