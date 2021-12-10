@@ -3,19 +3,16 @@ import React from "react"
 import "./App.css"
 
 import { connect } from "react-redux"
-import Login from "../src/pages/Login"
-import { Route, Switch } from 'react-router-dom';
 import {
   actionLogin,
   actionLogout,
 } from "./redux/auth/auth.actions"
-import Layout from "./layout";
+import { Guard } from "./guards/authenticationGuard";
 
 function App(props) {
   return (
     <div className="App">
-      {/* <Login/> */}
-      <Layout/>
+      <Guard/>
     </div>
   )
 }
