@@ -26,7 +26,7 @@ export const Login = () => {
           <input type="checkbox" />
           <a>Forgot password!</a>
         </div>
-        <Button>Login</Button>
+        <Button href="/">Login</Button>
       </div>
     </div>
   );

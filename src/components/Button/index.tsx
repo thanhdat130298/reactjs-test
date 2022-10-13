@@ -1,9 +1,23 @@
-import { FC } from "react";
+import { FC, ReactElement } from "react";
+import { Link } from "react-router-dom";
 import "./Button.scss";
-export const Button: FC<any> = ({ children, ...props }) => {
+interface IButton {
+  href?: string;
+  children: ReactElement | string;
+  onClick?: () => void;
+}
+export const Button: FC<IButton> = ({ children, href, ...props }) => {
   return (
-    <div className="wrapper" {...props}>
-      <div>{children}</div>
-    </div>
+    <>
+      {href ? (
+        <Link className="link" {...props} to={href}>
+          {children}
+        </Link>
+      ) : (
+        <div className="button" {...props}>
+          {children}
+        </div>
+      )}
+    </>
   );
 };

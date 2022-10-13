@@ -3,24 +3,34 @@ import "./App.scss";
 // import Login from "./pages/Login";
 // import { actionLogin, actionLogout } from "./redux/auth/auth.actions";
 // import { Layout } from "./layout";
-import { Home } from "pages/Home";
-import { Login } from "pages/Login";
+import { Footer } from "layout/Footer";
+import { Header } from "layout/Header";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-const routes = [
-  {
-    path: "/",
-    exact: true,
-    page: () => <Home />,
-  },
-  {
-    path: "/login",
-    page: () => <Login />,
-  },
-  {
-    path: "/a",
-    page: () => <div>shoelaces!</div>,
-  },
-];
+import { routes, LayoutType } from "router";
+import { FC, ReactElement } from "react";
+
+const LayoutDefault = ({ children }: any) => {
+  return (
+    <>
+      <Header />
+      {children}
+      <Footer />
+    </>
+  );
+};
+interface ILayout {
+  type: number | undefined;
+  children: ReactElement;
+}
+const Layout: FC<ILayout> = ({ type, children }) => {
+  switch (type) {
+    case LayoutType.default:
+      return <LayoutDefault>{children}</LayoutDefault>;
+    default:
+      return children;
+  }
+};
+
 const App = () => {
   return (
     <div className="App">
@@ -31,7 +41,7 @@ const App = () => {
               key={index}
               path={route.path}
               exact={route.exact}
-              children={<route.page />}
+              children={() => <Layout type={route.layout}>{route.page}</Layout>}
             />
           ))}
         </Switch>
