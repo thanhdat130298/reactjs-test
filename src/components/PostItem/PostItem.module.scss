@@ -1,0 +1,40 @@
+@import "../../styles/constants";
+.wrapper {
+  display: flex;
+  .wrapperLeft {
+    width: 50px;
+    .image {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  .wrapperContent {
+    margin-bottom: 20px;
+    padding-left: 10px;
+    .wrapperTop {
+      .author {
+        color: $color_primary;
+      }
+      .time {
+        padding-left: 10px;
+      }
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 10px 0px 20px 0px;
+      cursor: pointer;
+      color: $color_dark;
+      text-decoration: none;
+    }
+    .wrapperAction {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      .commentCount,
+      .likeCount {
+        margin-right: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+}

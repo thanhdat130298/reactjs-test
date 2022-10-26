@@ -1,19 +1,25 @@
-import "./App.scss";
-// import { connect } from "react-redux";
-// import Login from "./pages/Login";
-// import { actionLogin, actionLogout } from "./redux/auth/auth.actions";
-// import { Layout } from "./layout";
+import styles from "./App.module.scss";
+import "antd/dist/antd.css";
+import "styles/common.scss";
 import { Footer } from "layout/Footer";
 import { Header } from "layout/Header";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { routes, LayoutType } from "router";
 import { FC, ReactElement } from "react";
+import clsx from "clsx";
 
-const LayoutDefault = ({ children }: any) => {
+const LayoutDefault = ({ children, hasRight }: any) => {
   return (
     <>
       <Header />
-      {children}
+      <div className={styles.main}>
+        <div className={styles.wrapper}>
+          <div className={clsx(styles.children, hasRight && styles.hasRight)}>
+            {children}
+          </div>
+          {hasRight && <div className={styles.rightSide}></div>}
+        </div>
+      </div>
       <Footer />
     </>
   );
@@ -21,11 +27,12 @@ const LayoutDefault = ({ children }: any) => {
 interface ILayout {
   type: number | undefined;
   children: ReactElement;
+  hasRight: boolean | undefined;
 }
-const Layout: FC<ILayout> = ({ type, children }) => {
+const Layout: FC<ILayout> = ({ type, children, hasRight }) => {
   switch (type) {
     case LayoutType.default:
-      return <LayoutDefault>{children}</LayoutDefault>;
+      return <LayoutDefault hasRight={hasRight}>{children}</LayoutDefault>;
     default:
       return children;
   }
@@ -41,7 +48,11 @@ const App = () => {
               key={index}
               path={route.path}
               exact={route.exact}
-              children={() => <Layout type={route.layout}>{route.page}</Layout>}
+              children={() => (
+                <Layout type={route.layout} hasRight={route.hasRight}>
+                  {route.page}
+                </Layout>
+              )}
             />
           ))}
         </Switch>

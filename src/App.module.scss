@@ -1,0 +1,31 @@
+@import "styles/constants";
+
+//layout
+.main {
+  background-color: #f1f4f7;
+  width: 100%;
+  .wrapper {
+    display: flex;
+    width: 1440px;
+    margin: 0 auto;
+    padding: 10px;
+    min-height: calc(100vh - ($header_height + $footer_height));
+    .children {
+      padding: 15px;
+      border-radius: 5px;
+      background-color: #fff;
+      width: 100%;
+      min-width: 30%;
+    }
+    .hasRight {
+      width: 70%;
+      padding: 15px;
+    }
+    .rightSide {
+      background-color: #fff;
+      margin-left: 10px;
+      width: calc(30% - 10px);
+      border-radius: 5px;
+    }
+  }
+}

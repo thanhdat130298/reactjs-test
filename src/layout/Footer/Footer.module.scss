@@ -1,7 +1,6 @@
+@import "../../styles/constants";
 .wrapper {
-  position: absolute;
-  bottom: 0;
-  height: 100px;
+  height: $footer_height;
   text-align: center;
   background-color: gray;
   width: 100%;
