@@ -4,66 +4,30 @@ import avt from "images/avatar.png";
 export const Home = () => {
   const data = [
     {
-      id: 1,
+      id: 100,
       img: avt,
       author: "Dat Nguyen",
       date: "Monday, 11:34 PM",
-      title:
-        "Tìm hiểu về Reverse Engineering trong Android (Dịch ngược mã nguồn từ file APK)",
+      title: "This is sample title in post - xxx",
       description:
-        "Reverse Engineering là quá trình tách biệt một thứ gì đó riêng biệt để theo dõi cách hoạt động của chúng. Decompiling là một dạng của Reverse Engineering , nơi mà một đối tượng nào đó hay cụ thể là một ứng dụng mobile có thể được phân tích ra thành source code của nó....",
-      likeCount: 100,
-      commentCount: 4,
-    },
-    {
-      id: 2,
-      img: avt,
-      author: "Dat Nguyen",
-      date: "Monday, 11:34 PM",
-      title:
-        "Tìm hiểu về Reverse Engineering trong Android (Dịch ngược mã nguồn từ file APK)",
-      description:
-        "Reverse Engineering là quá trình tách biệt một thứ gì đó riêng biệt để theo dõi cách hoạt động của chúng. Decompiling là một dạng của Reverse Engineering , nơi mà một đối tượng nào đó hay cụ thể là một ứng dụng mobile có thể được phân tích ra thành source code của nó....",
-      likeCount: 100,
-      commentCount: 4,
-    },
-    {
-      id: 3,
-      img: avt,
-      author: "Dat Nguyen",
-      date: "Monday, 11:34 PM",
-      title:
-        "Tìm hiểu về Reverse Engineering trong Android (Dịch ngược mã nguồn từ file APK)",
-      description:
-        "Reverse Engineering là quá trình tách biệt một thứ gì đó riêng biệt để theo dõi cách hoạt động của chúng. Decompiling là một dạng của Reverse Engineering , nơi mà một đối tượng nào đó hay cụ thể là một ứng dụng mobile có thể được phân tích ra thành source code của nó....",
-      likeCount: 100,
-      commentCount: 4,
-    },
-    {
-      id: 4,
-      img: avt,
-      author: "Dat Nguyen",
-      date: "Monday, 11:34 PM",
-      title:
-        "Tìm hiểu về Reverse Engineering trong Android (Dịch ngược mã nguồn từ file APK)",
-      description:
-        "Reverse Engineering là quá trình tách biệt một thứ gì đó riêng biệt để theo dõi cách hoạt động của chúng. Decompiling là một dạng của Reverse Engineering , nơi mà một đối tượng nào đó hay cụ thể là một ứng dụng mobile có thể được phân tích ra thành source code của nó....",
-      likeCount: 100,
-      commentCount: 4,
-    },
-    {
-      id: 5,
-      img: avt,
-      author: "Dat Nguyen",
-      date: "Monday, 11:34 PM",
-      title:
-        "Tìm hiểu về Reverse Engineering trong Android (Dịch ngược mã nguồn từ file APK)",
-      description:
-        "Reverse Engineering là quá trình tách biệt một thứ gì đó riêng biệt để theo dõi cách hoạt động của chúng. Decompiling là một dạng của Reverse Engineering , nơi mà một đối tượng nào đó hay cụ thể là một ứng dụng mobile có thể được phân tích ra thành source code của nó....",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis odit architecto iusto doloribus explicabo impedit laboriosam reiciendis dolores deserunt provident maxime incidunt ducimus distinctio, veritatis, doloremque eaque aliquam laborum vitae.",
       likeCount: 100,
       commentCount: 4,
     },
   ];
+  for (let i = 0; i < 10; i++) {
+    data.push({
+      id: i,
+      img: avt,
+      author: "Dat Nguyen",
+      date: "Monday, 11:34 PM",
+      title: "This is sample title in post - " + i,
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis odit architecto iusto doloribus explicabo impedit laboriosam reiciendis dolores deserunt provident maxime incidunt ducimus distinctio, veritatis, doloremque eaque aliquam laborum vitae.",
+      likeCount: 10 + i,
+      commentCount: 4 + i,
+    });
+  }
   return (
     <div>
       <div>
