@@ -2,7 +2,6 @@
   "name": "hello",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://thanhdat130298.github.io/reactjs-test/",
   "predeploy": "npm run build",
   "dependencies": {
     "@types/node": "^18.8.4",
@@ -11,7 +10,6 @@
     "antd": "^4.23.6",
     "axios": "^0.22.0",
     "clsx": "^1.2.1",
-    "gh-pages": "^4.0.0",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -27,8 +25,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
